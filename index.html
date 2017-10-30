@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Beauty Quiz</title>
+
+<style>
+
+body {
+
+background: #FFF url(marble.jpg) no-repeat center fixed;
+
+background-size: cover;
+
+font-family: Helvetica;
+
+}
+
+
+
+#main {
+
+max-width: 700px;
+
+border: 1px gray solid;
+
+margin: auto;
+
+padding: 10px;
+
+background-color: white;
+
+border-radius: 10px;
+
+border: 1px solid #c6c7cc;
+
+font: 14px/1.4 "Alice";
+
+overflow: hidden;
+
+width: 600px;
+
+padding-top: 50px;
+
+padding-right: 30px;
+
+padding-bottom: 50px;
+
+padding-left: 30px;
+
+}
+
+
+
+#header {
+
+margin-top: 0;
+
+border: 2px solid black;
+
+padding: 5px;
+
+height: 250px;
+
+background: black;
+
+background-image: url("destiny.jpg");
+
+background-size: 100% 100%;
+
+background-repeat: no-repeat;
+
+font-family:"Alice";
+
+font-size: 25px;
+
+text-align: center;
+
+}
+
+
+
+input[type=button], input[type=submit]{
+
+    background-color: Pink;
+
+	font-family:"Alice";
+
+    border: none;
+
+    color: white;
+
+    padding: 16px 32px;
+
+    text-decoration: none;
+
+    margin: 4px 2px;
+
+    cursor: pointer;
+
+}
+
+	
+
+select {
+
+	font-family:"Alice";
+
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    background-color: Pink;
+
+}
+
+
+
+textarea {
+
+    width: 100%;
+
+    height: 150px;
+
+    padding: 12px 20px;
+
+    box-sizing: border-box;
+
+    border: 2px solid #ccc;
+
+    border-radius: 4px;
+
+    background-color: #f8f8f8;
+
+    resize: none;
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+<div id="main"><!-- open main div -->
+
+<div id="header"><!-- open header div -->
+
+
+
+</div><!-- close header div -->
+
+
+
+
+
+<form  id="form1" action=" ">
+
+<p><b>What is your favorite makeup product?</b></p>
+
+<input type="radio" name="abc" value="sm" />Mascara<br />
+
+<input type="radio" name="abc" value="cm" />Highlighter<br />
+
+<input type="radio" name="abc" value="stm" />Eyeliner<br />
+
+<input type="radio" name="abc" value="csm" />Lip gloss<br />
+
+
+
+<p><b>Which hairstyle fits you the best?</b></p>
+
+<input type="radio" name="def" value="stm" />Beachy waves<br />
+
+<input type="radio" name="def" value="csm" />Sleek and straight<br />
+
+<input type="radio" name="def" value="cm" />Voluminous curls<br />
+
+<input type="radio" name="def" value="sm" />Messy bun<br />
+
+
+
+<p><b>Which color do you like best?</b></p>
+
+<input type="radio" name="ghi" value="sm" />Pink<br />
+
+<input type="radio" name="ghi" value="cm" />Yellow<br />
+
+<input type="radio" name="ghi" value="csm" />Red<br />
+
+<input type="radio" name="ghi" value="stm" />Blue<br />
+
+
+
+<!-- This demonstrates the use of a dropdown instead of using radio buttons. You can decide which you want to use. Be consistent and consider how a user will best interact with the element. -->
+
+
+
+<p><b>What's your personality?</b></p>
+
+<select id="pqr">
+
+  <option value="cm">Sassy & Outgoing</option>
+
+  <option value="sm">Shy & reserved</option>
+
+  <option value="csm">Cool, calm & collected</option>
+
+  <option value="stm">Relaxed & go-with-the-flow</option>
+
+</select>
+
+
+
+<p><b>What type of environment appeals to you most?</b></p>
+
+<input type="radio" name="jkl" value="stm" />A coffee shop<br />
+
+<input type="radio" name="jkl" value="csm" />A fancy restaurant<br />
+
+<input type="radio" name="jkl" value="sm" />A day relaxing on the beach<br />
+
+<input type="radio" name="jkl" value="cm" />A rooftop party overlooking the city<br />
+
+
+
+<tr><td>
+
+<h2>Which makeup look is the most attractive to you?</h2></td><td>
+
+<p><label><input type="radio" name="mno" value="cm" /><img src="confident.jpg" width="100"/><label></td><td>
+
+<label><input type="radio" name="mno" value="csm" /><img src="classy.jpg" width="120"/><label></td><td>
+
+<br><label><input type="radio" name="mno" value="sm" /><img src="simple.jpg" width="120"/><label></td><td>
+
+<label><input type="radio" name="mno" value="stm" /><img src="subtle.jpg" width="100"/><label></td><td>
+
+</td></tr>
+
+<br>
+
+
+
+
+
+<br />
+
+<input type="submit" value="Find Out What Kind of Beauty You are!">
+
+
+
+</form>
+
+<p id="answer"></p>
+
+<p id="answer2"></p>
+
+<p id="answer3"></p>
+
+<p id="answer4"></p>
+
+<p id="answer5"></p>
+
+<p id="answer6"></p>
+
+</div><!-- close main div -->
+
+
+
+
+
+<script>
+
+document.getElementById("form1").onsubmit=function() {
+
+    abc = parseInt(document.querySelector('input[name = "abc"]:checked').value);
+
+	   def = parseInt(document.querySelector('input[name = "def"]:checked').value);
+
+	   ghi = parseInt(document.querySelector('input[name = "ghi"]:checked').value);
+
+	   jkl = parseInt(document.querySelector('input[name = "jkl"]:checked').value);
+
+	   mno = document.querySelector('input[name = "mno"]:checked').value;
+
+	   
+
+	   //below is the way to evaluate the value of a dropdown -easier than radio buttons
+
+	   //parseInt is to make sure it doesn't evaluate as a string
+
+	   pqr = parseInt(document.getElementById("pqr").value);
+
+	   
+
+	   
+
+	   // initialize score variables 
+
+	  sm = 0;
+
+	  stm = 0;
+
+	  cm = 0;
+
+	  csm = 0;
+
+	  
+
+	  //function to calculate score for each question
+
+	  function eachscore(x){
+
+	  if(x == "sm") { sm = sm + 1}
+
+	  if(x == "stm") { stm = stm + 1}
+
+	  if(x == "cm") { cm = cm + 1}
+
+	  if(x == "csm") { csm = csm + 1}
+
+	  }
+
+	  // for the above function, you could also change the 1 to a so you could give more points for certain questions
+
+	  
+
+	  //call function for each question
+
+	  eachscore(eval("abc"));
+
+	  eachscore(eval("def"));
+
+	  eachscore(eval("ghi"));
+
+	  eachscore(eval("jkl"));
+
+	  eachscore(eval("mno"));
+
+	  eachscore(eval("pqr"));
+
+	  
+
+	  
+
+	   all = [sm, stm, cm, csm];
+
+	   
+
+	//get the max score  in the array
+
+	maxscore = Math.max.apply(Math,all);
+
+	
+
+    //figure out which score is the max score by identifying its index number
+
+	for(i=0; i<all.length; i++) {
+
+	if(all[i]==maxscore) {
+
+	highest = i;
+
+	}
+
+	}
+
+	   
+
+	 
+
+	// object holding scores and feedback	
+
+scores = [{index:0, feedback: "<b>You are a simple and pure beauty! You prefer a more natural look, and believe that less is more. You enjoy the smaller things in life, and you are very breezy and bubbly!<b><br /><center><img src='sr.gif' width='300' /></center>"},
+
+{index:1, feedback: "<b>You are a subtle beauty queen! While you enjoy the simple things in life, you also love to add a little bit of spice in your life. On a day-to-day basis, you keep it natural and fresh, but at night, you add some smokiness to really get the party started!</b><br /><center><img src='ssr.gif' width='300' /></center>"},
+
+{index:2, feedback: "<b>You are a mega DIVA beauty queen! You're confidence radiates as much as your makeup does! You are bold and do as you please. You're not afraid to try something new, and you love to rock a makeup look that stands out!</b><br /><center><img src='ccr.gif' width='300' /></center>"},
+
+{index:3, feedback: "<b>You are classy and chic. You carry yourself well, and prefer a more sophisticated look when it comes to your beauty. You are neither shy nor over the top, you are just the right amount of snazziness. You are truly a classic beauty!</b><br /><center><img src='cr.gif' width='300' /></center>"}];
+
+
+
+
+
+//loop to match index to score and reply with feedback
+
+for(i=0;i<scores.length; i++) {
+
+if(highest == scores[i].index) {
+
+document.getElementById("answer6").innerHTML = scores[i].feedback;
+
+}
+
+}
+
+
+
+
+
+return false; // required to not refresh the page; just leave this here
+
+} //this ends the submit function
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
